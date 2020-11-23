@@ -1,16 +1,18 @@
 package com.company.Menus;
 
+import com.company.Menus.AdminMenu;
+import com.company.Menus.ClientMenu;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-
-public class ClientMenu {
+public class Management {
 
     public static Scanner scanner = new Scanner(System.in);
     public static boolean quit = false;
 
-    public ClientMenu() {
-        myClientMenu();
+    public Management() {
+        myMenu();
         myMenuLoop();
     }
 
@@ -20,27 +22,30 @@ public class ClientMenu {
         } while (!quit);
     }
 
-    private static void myClientMenu() {
+
+    // Printing the options on the menu
+    public static void myMenu() {
         System.out.println("\n \n What do you want to do ? \n");
-        System.out.println("1) List products");
-        System.out.println("2) My cart");
-        System.out.println("3) Logout");
+        System.out.println("1) Log in as a client");
+        System.out.println("2) Log in as an administrator");
+        System.out.println("3) Exit");
     }
+
     private static void userEntry() {
         try {
             int userChoice = scanner.nextInt();
             // Swich case for user choice
             switch (userChoice) {
                 case 1:
-                    // list products
+                    // client menu
+                    new ClientMenu();
                     break;
                 case 2:
-                    //my cart
+                    // admin menu
+                    new AdminMenu();
                     break;
                 case 3:
-                    //logout - get back to the main menu
                     quit = true;
-                    Management.myMenu();
                     break;
                 default:
                     System.out.println("Invalid choice, please select one of the options above");
@@ -49,8 +54,7 @@ public class ClientMenu {
         } catch (InputMismatchException e) {
             System.out.println("Your user input is not correct, please try again");
             scanner.nextLine();
-
         }
-
     }
+
 }

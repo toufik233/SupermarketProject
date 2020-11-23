@@ -1,16 +1,18 @@
 package com.company.Menus;
 
+import com.company.Objects.ListProducts;
+import com.company.Objects.Product;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-
-public class ClientMenu {
+public class AdminMenu {
 
     public static Scanner scanner = new Scanner(System.in);
     public static boolean quit = false;
 
-    public ClientMenu() {
-        myClientMenu();
+    public AdminMenu() {
+        myAdminMenu();
         myMenuLoop();
     }
 
@@ -20,11 +22,11 @@ public class ClientMenu {
         } while (!quit);
     }
 
-    private static void myClientMenu() {
+    private static void myAdminMenu() {
         System.out.println("\n \n What do you want to do ? \n");
         System.out.println("1) List products");
-        System.out.println("2) My cart");
-        System.out.println("3) Logout");
+        System.out.println("2) Add a product");
+        System.out.println("3) Return");
     }
     private static void userEntry() {
         try {
@@ -33,12 +35,14 @@ public class ClientMenu {
             switch (userChoice) {
                 case 1:
                     // list products
+                    new ListProducts();
                     break;
                 case 2:
-                    //my cart
+                    //add a product
+                    Product.addProduct();
                     break;
                 case 3:
-                    //logout - get back to the main menu
+                    //return - get back to the main menu
                     quit = true;
                     Management.myMenu();
                     break;
@@ -53,4 +57,5 @@ public class ClientMenu {
         }
 
     }
+
 }
