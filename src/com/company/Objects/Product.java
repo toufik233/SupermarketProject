@@ -28,7 +28,7 @@ public class Product {
         return quantity;
     }
 
-    /*public static void addProduct(){
+    public static void addProduct(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter product name");
         String nameProductInput = scanner.next();
@@ -37,7 +37,6 @@ public class Product {
         System.out.println("Enter product quantity");
         int quantityProductInput = scanner.nextInt();
         System.out.println("Product added");
-        Product myProduct = new Product(nameProductInput, priceProductInput, quantityProductInput);
-    }*/
+    }
 
 }
