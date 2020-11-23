@@ -1,5 +1,8 @@
 package com.company.Menus;
 
+import com.company.Objects.Cart;
+import com.company.Objects.Product;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -14,7 +17,7 @@ public class ClientMenu {
         myMenuLoop();
     }
 
-    private static void myMenuLoop(){
+    private static void myMenuLoop() {
         do {
             userEntry();
         } while (!quit);
@@ -26,6 +29,7 @@ public class ClientMenu {
         System.out.println("2) My cart");
         System.out.println("3) Logout");
     }
+
     private static void userEntry() {
         try {
             int userChoice = scanner.nextInt();
@@ -33,6 +37,7 @@ public class ClientMenu {
             switch (userChoice) {
                 case 1:
                     // list products
+                    new Cart();
                     break;
                 case 2:
                     //my cart

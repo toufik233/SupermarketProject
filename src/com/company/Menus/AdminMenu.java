@@ -3,6 +3,7 @@ package com.company.Menus;
 import com.company.Objects.ListProducts;
 import com.company.Objects.Product;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -16,7 +17,7 @@ public class AdminMenu {
         myMenuLoop();
     }
 
-    private static void myMenuLoop(){
+    private static void myMenuLoop() {
         do {
             userEntry();
         } while (!quit);
@@ -28,14 +29,16 @@ public class AdminMenu {
         System.out.println("2) Add a product");
         System.out.println("3) Return");
     }
+
     private static void userEntry() {
         try {
             int userChoice = scanner.nextInt();
-            // Swich case for user choice
+            // Switch case for user choice
             switch (userChoice) {
                 case 1:
                     // list products
-                    new ListProducts();
+                    Product.printAllProducts();
+                    System.out.println("\n Type 2 to add another product, 3 to return to the main menu");
                     break;
                 case 2:
                     //add a product
